@@ -125,3 +125,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+// ظهور العناصر عند التمرير
+function revealOnScroll() {
+  const items = document.querySelectorAll('.adhkar li, .prayer-times tr');
+  const windowHeight = window.innerHeight;
+
+  items.forEach(item => {
+    const rect = item.getBoundingClientRect();
+    if(rect.top < windowHeight - 50){
+      item.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
