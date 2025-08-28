@@ -1,23 +1,17 @@
+// ====================
+// وظائف الصفحة بعد تحميل DOM
+// ====================
 document.addEventListener("DOMContentLoaded", () => {
-  // ====================
-  // دخول كزائر
-  // ====================
+
+  // ======= دخول كزائر =======
   const guestBtn = document.querySelector(".guest");
   if (guestBtn) {
     guestBtn.addEventListener("click", () => {
-      Swal.fire({ // استخدام مكتبة SweetAlert لجمال الرسالة
-        title: "مرحبًا!",
-        text: "تم الدخول كزائر مؤقت 😊",
-        icon: "info",
-        timer: 2000,
-        showConfirmButton: false
-      });
+      alert("تم الدخول كزائر مؤقت");
     });
   }
 
-  // ====================
-  // وضع الليل/النهار
-  // ====================
+  // ======= وضع الليل/النهار =======
   const toggleModeBtn = document.getElementById("toggle-mode");
   if (toggleModeBtn) {
     toggleModeBtn.addEventListener("click", () => {
@@ -28,32 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ====================
-  // تغيير اللغة
-  // ====================
-  const langSelect = document.getElementById("lang-select");
-  if (langSelect) {
-    langSelect.addEventListener("change", () => {
-      const lang = langSelect.value;
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        el.textContent = translations[lang][key];
-      });
-      // تأثير جمالي عند تغيير اللغة
-      document.querySelector(".container").classList.add("flash");
-      setTimeout(() => document.querySelector(".container").classList.remove("flash"), 500);
+  // ======= تغيير اللغة =======
+  const langSwitch = document.getElementById("lang-switch");
+  if(langSwitch){
+    langSwitch.addEventListener("change", () => {
+      alert("تم تغيير اللغة إلى: " + langSwitch.value);
+      // لاحقًا يمكن إضافة ترجمة النصوص ديناميكيًا هنا
     });
   }
 
-  // ====================
-  // Leaflet.js - خريطة الحرم
-  // ====================
-  if (document.getElementById("map")) {
+  // ======= خريطة Leaflet =======
+  const mapElement = document.getElementById('map');
+  if(mapElement){
+    // إنشاء الخريطة
     var map = L.map('map').setView([21.4225, 39.8262], 17); // إحداثيات الكعبة
+
+    // إضافة طبقة OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap'
     }).addTo(map);
 
+    // بيانات الأماكن
     const places = [
       {name:"دورة مياه 1", type:"bathroom", lat:21.4230, lng:39.8265},
       {name:"مصعد 1", type:"elevator", lat:21.4227, lng:39.8268},
@@ -64,20 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const markers = [];
-
     places.forEach(p => {
       const marker = L.marker([p.lat, p.lng])
-        .bindPopup(`<b>${p.name}</b>`)
+        .bindPopup(p.name)
         .addTo(map);
       marker.placeType = p.type;
       markers.push(marker);
     });
 
     // فلترة الأماكن
-    document.querySelectorAll(".filter").forEach(cb => {
+    const checkboxes = document.querySelectorAll(".filter");
+    checkboxes.forEach(cb => {
       cb.addEventListener("change", () => {
         markers.forEach(marker => {
-          if(document.querySelector(`.filter[data-type="${marker.placeType}"]`).checked){
+          const typeCheckbox = document.querySelector(`.filter[data-type="${marker.placeType}"]`);
+          if(typeCheckbox.checked){
             map.addLayer(marker);
           } else {
             map.removeLayer(marker);
@@ -92,16 +82,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const lat = pos.coords.latitude;
         const lng = pos.coords.longitude;
         const userMarker = L.circleMarker([lat,lng], {
-          radius:8, color:"red", fillColor:"red", fillOpacity:0.8
+          radius:8,
+          color:"red",
+          fillColor:"red",
+          fillOpacity:0.8
         }).addTo(map).bindPopup("موقعك الحالي");
         map.setView([lat,lng],17);
       });
     }
   }
 
-  // ====================
-  // تنبيهات وقت الصلاة
-  // ====================
+  // ======= تنبيه وقت الصلاة =======
   const prayerTimes = [
     {name:"الفجر", time:"05:10"},
     {name:"الظهر", time:"12:30"},
@@ -118,31 +109,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     prayerTimes.forEach(p => {
       if(currentTime === p.time){
-        Swal.fire({
-          title: `حان وقت صلاة ${p.name}`,
-          icon: "info",
-          timer: 4000,
-          showConfirmButton: false
-        });
+        alert(`حان وقت صلاة ${p.name}`);
       }
     });
   }, 60000);
 
-  // ====================
-  // نموذج التواصل
-  // ====================
+  // ======= إرسال نموذج التواصل =======
   const contactForm = document.getElementById("contactForm");
   if(contactForm){
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      Swal.fire({
-        title: "تم الإرسال!",
-        text: "تم إرسال رسالتك بنجاح، سيتم الرد عليك قريبًا.",
-        icon: "success",
-        timer: 2500,
-        showConfirmButton: false
-      });
+      alert("تم إرسال رسالتك بنجاح! سيتم الرد عليك قريبًا.");
       contactForm.reset();
     });
   }
+
 });

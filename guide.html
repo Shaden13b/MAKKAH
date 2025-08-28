@@ -15,27 +15,21 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <!-- Header ثابت -->
-  <header class="top-bar">
-    <div class="logo">
-      <img src="AL.1.jpg" alt="Logo">
-      <span>AL.1</span>
-    </div>
-    <div class="controls">
-      <select id="lang-select">
-        <option value="ar">🇸🇦 العربية</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
-      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
-    </div>
-  </header>
-
-  <div class="container animate-fade">
-    <h2 class="animate-slide"><i class="fas fa-book-open"></i> دليل العمرة والحج</h2>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-book-open"></i> دليل العمرة والحج</h1>
+      <div class="controls">
+        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+        <select id="lang-switch">
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="en">🇬🇧 English</option>
+        </select>
+      </div>
+    </header>
 
     <!-- خطوات العمرة والحج -->
-    <section class="steps animate-fade">
-      <h3>خطوات العمرة</h3>
+    <section class="steps">
+      <h2>خطوات العمرة</h2>
       <ol>
         <li>الإحرام من الميقات المحدد</li>
         <li>التلبية عند النية</li>
@@ -44,7 +38,7 @@
         <li>الحلق أو التقصير</li>
       </ol>
 
-      <h3>خطوات الحج</h3>
+      <h2>خطوات الحج</h2>
       <ol>
         <li>الإحرام من الميقات المحدد</li>
         <li>الوقوف بعرفة</li>
@@ -55,8 +49,8 @@
     </section>
 
     <!-- آداب زيارة الحرم -->
-    <section class="etiquette animate-fade">
-      <h3>آداب زيارة الحرم</h3>
+    <section class="etiquette">
+      <h2>آداب زيارة الحرم</h2>
       <ul>
         <li>اللباس المحتشم</li>
         <li>الصمت قدر الإمكان والتأدب</li>
@@ -66,8 +60,8 @@
     </section>
 
     <!-- أسئلة وأجوبة -->
-    <section class="faq animate-fade">
-      <h3>أسئلة شائعة</h3>
+    <section class="faq">
+      <h2>أسئلة شائعة</h2>
       <details>
         <summary>هل يمكن أداء العمرة أكثر من مرة في اليوم؟</summary>
         <p>نعم، يمكن أداء العمرة عدة مرات ولكن يجب النية لكل عمرة.</p>
@@ -83,15 +77,14 @@
     </section>
 
     <!-- تحميل PDF -->
-    <section class="download-guide animate-fade">
+    <section class="download-guide">
       <a href="#" class="btn"><i class="fas fa-download"></i> تحميل دليل PDF</a>
     </section>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    صنع بكل حب بواسطة ريما ❤️
-  </footer>
+    <footer>
+      <p>© جميع الحقوق محفوظة - صنع بواسطة ريما</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

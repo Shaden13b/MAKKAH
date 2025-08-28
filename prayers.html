@@ -6,9 +6,6 @@
   <title>الأذكار والقرآن وأوقات الصلاة - الحرمين</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -18,35 +15,22 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <!-- Header ثابت -->
-  <header class="top-bar">
-    <div class="logo">
-      <img src="AL.1.jpg" alt="Logo">
-      <span>AL.1</span>
-    </div>
-    <div class="nav-links">
-      <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
-      <a href="map.html"><i class="fas fa-map"></i> الخريطة</a>
-      <a href="guide.html"><i class="fas fa-book-open"></i> دليل العمرة والحج</a>
-      <a href="prayers.html"><i class="fas fa-pray"></i> الأذكار والصلاة</a>
-      <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
-    </div>
-    <div class="controls">
-      <select id="lang-select">
-        <option value="ar">العربية</option>
-        <option value="en">English</option>
-      </select>
-      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
-    </div>
-  </header>
-
-  <!-- محتوى الصفحة -->
   <div class="container">
-    <h2 class="animate-slide"><i class="fas fa-pray"></i> الأذكار، القرآن، وأوقات الصلاة</h2>
+    <!-- ترويسة الصفحة -->
+    <header>
+      <h1><i class="fas fa-pray"></i> الأذكار، القرآن، وأوقات الصلاة</h1>
+      <div class="controls">
+        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+        <select id="lang-switch">
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="en">🇬🇧 English</option>
+        </select>
+      </div>
+    </header>
 
-    <!-- الأذكار اليومية -->
-    <section class="adhkar animate-fade">
-      <h3>أذكار يومية</h3>
+    <!-- أذكار يومية -->
+    <section class="adhkar">
+      <h2><i class="fas fa-star"></i> أذكار يومية</h2>
       <ul>
         <li>سبحان الله – 33 مرة</li>
         <li>الحمد لله – 33 مرة</li>
@@ -56,29 +40,37 @@
     </section>
 
     <!-- رابط القرآن المباشر -->
-    <section class="quran animate-fade">
-      <h3>القرآن الكريم</h3>
-      <a href="https://quran.com" target="_blank" class="btn"><i class="fas fa-book"></i> قراءة القرآن مباشرة</a>
+    <section class="quran">
+      <h2><i class="fas fa-book"></i> القرآن الكريم</h2>
+      <a href="https://quran.com" target="_blank" class="btn"><i class="fas fa-book-open"></i> قراءة القرآن مباشرة</a>
     </section>
 
     <!-- أوقات الصلاة -->
-    <section class="prayer-times animate-fade">
-      <h3>أوقات الصلاة وأسماء الأئمة</h3>
+    <section class="prayer-times">
+      <h2><i class="fas fa-clock"></i> أوقات الصلاة وأسماء الأئمة</h2>
       <table>
-        <tr><th>الصلاة</th><th>الوقت</th><th>الإمام</th></tr>
-        <tr><td>الفجر</td><td>05:10</td><td>ياسر الدوسري</td></tr>
-        <tr><td>الظهر</td><td>12:30</td><td>ماهر المعيقلي</td></tr>
-        <tr><td>العصر</td><td>15:45</td><td>مشاري العفاسي</td></tr>
-        <tr><td>المغرب</td><td>18:10</td><td>سعود الشريم</td></tr>
-        <tr><td>العشاء</td><td>19:30</td><td>عبد الباسط عبد الصمد</td></tr>
+        <thead>
+          <tr>
+            <th>الصلاة</th>
+            <th>الوقت</th>
+            <th>الإمام</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>الفجر</td><td>05:10</td><td>ياسر الدوسري</td></tr>
+          <tr><td>الظهر</td><td>12:30</td><td>ماهر المعيقلي</td></tr>
+          <tr><td>العصر</td><td>15:45</td><td>مشاري العفاسي</td></tr>
+          <tr><td>المغرب</td><td>18:10</td><td>سعود الشريم</td></tr>
+          <tr><td>العشاء</td><td>19:30</td><td>عبد الباسط عبد الصمد</td></tr>
+        </tbody>
       </table>
     </section>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    صنع بكل حب بواسطة ريما ❤️
-  </footer>
+    <!-- حقوق الصفحة -->
+    <footer>
+      <p>© جميع الحقوق محفوظة - صنع بواسطة ريما</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

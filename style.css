@@ -1,192 +1,407 @@
-/* ============ خلفية الفيديو ============ */
+/* =========================
+   خلفية الفيديو
+========================= */
 #bg-video {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  z-index: -1;
   filter: brightness(60%);
-  animation: fadeInVideo 2s ease forwards;
-}
-@keyframes fadeInVideo {
-  from {opacity: 0;}
-  to {opacity: 1;}
 }
 
-/* ============ Header ============ */
-header.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: rgba(0,0,0,0.7);
+/* =========================
+   تنسيقات عامة
+========================= */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+body.dark-mode {
+  background: #111;
+  color: #eee;
+}
+
+/* =========================
+   الحاوية الرئيسية
+========================= */
+.container {
+  max-width: 1000px;
+  margin: 80px auto 50px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* =========================
+   العناوين
+========================= */
+.container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #006c67;
+}
+
+/* =========================
+   الشريط العلوي + تحكم الوضع الليلي + اختيار اللغة
+========================= */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
-  backdrop-filter: blur(5px);
-  animation: slideDown 1s ease forwards;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
-@keyframes slideDown { from {top: -80px;} to {top:0;} }
 
-.top-bar .logo {
+header h1 {
+  font-size: 1.6rem;
+  color: #006c67;
+}
+
+.controls {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-weight: bold;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-.top-bar .logo img {
-  height: 40px;
-  border-radius: 50%;
-  animation: logoBounce 1s ease infinite alternate;
-}
-@keyframes logoBounce {
-  0% { transform: translateY(0);}
-  100% { transform: translateY(-5px);}
-}
-.top-bar .nav-links a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.top-bar .nav-links a:hover {
-  color: #00f0c2;
-  transform: scale(1.1);
-}
-.top-bar .lang-switch select {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+  gap: 15px;
 }
 
-/* ============ صندوق المحتوى ============ */
-.container {
-  background: rgba(255,255,255,0.85);
-  border-radius: 15px;
-  margin: 100px auto 50px auto;
-  padding: 30px;
-  width: 80%;
-  max-width: 900px;
-  text-align: center;
-  box-shadow: 0px 4px 25px rgba(0,0,0,0.3);
-  animation: fadeIn 1.2s ease-in-out;
-}
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-/* ============ الأزرار ============ */
-.btn {
-  display: inline-block;
+#toggle-mode {
   background: #006c67;
   color: white;
-  padding: 12px 20px;
-  border-radius: 12px;
   border: none;
-  margin: 10px 0;
+  border-radius: 50%;
+  padding: 10px;
   cursor: pointer;
-  text-decoration: none;
   transition: 0.3s;
 }
-.btn:hover {
-  background: #00f0c2;
-  transform: scale(1.05);
-  box-shadow: 0px 0px 15px rgba(0,240,194,0.7);
+
+#toggle-mode:hover {
+  background: #004d4a;
 }
 
-/* ============ مربعات الإدخال ============ */
-.input-group {
-  margin-bottom: 15px;
-  text-align: right;
+#lang-switch {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  cursor: pointer;
 }
+
+/* =========================
+   شريط الأخبار
+========================= */
+.news-ticker {
+  background: #006c67;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.news-ticker p {
+  margin: 0;
+  animation: slideNews 15s linear infinite;
+}
+
+@keyframes slideNews {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* =========================
+   قائمة الأزرار الرئيسية
+========================= */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.menu .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 15px;
+  background: #006c67;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.menu .btn:hover {
+  background: #004d4a;
+  transform: scale(1.05);
+}
+
+/* =========================
+   الحركات fadeIn
+========================= */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* =========================
+   صفحة تسجيل الدخول
+========================= */
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  margin: 10% auto;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #006c67;
+}
+
+.input-group {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
 .input-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: #222;
 }
+
 .input-group input,
-.input-group select,
-.input-group textarea {
+.input-group select {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #bbb;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group select:focus {
-  border-color: #00f0c2;
-  box-shadow: 0 0 8px rgba(0,240,194,0.6);
-  outline: none;
+  border-radius: 8px;
 }
 
-/* ============ الوضع الليلي ============ */
-body.dark-mode .container {
-  background: rgba(0,0,0,0.85);
-  color: white;
-}
-body.dark-mode .btn {
-  background: #222;
-}
-body.dark-mode .btn:hover {
-  background: #00f0c2;
-}
-
-/* ============ شريط الأخبار ============ */
-.news-ticker {
+.btn {
+  display: block;
   background: #006c67;
   color: white;
   padding: 10px;
-  margin: 20px 0;
+  border: none;
   border-radius: 8px;
-  overflow: hidden;
-}
-.news-ticker p {
-  margin: 0;
-  animation: slideText 12s linear infinite;
-}
-@keyframes slideText {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-100%); }
+  margin: 10px 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ============ Footer ============ */
-footer {
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-  background: rgba(0,0,0,0.6);
+.btn:hover {
+  background: #004d4a;
+}
+
+.guest {
+  background: #555;
+}
+
+.guest:hover {
+  background: #333;
+}
+
+/* =========================
+   صفحة الخريطة
+========================= */
+#map {
+  margin-top: 20px;
+  border-radius: 10px;
+  height: 500px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.filters {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filters label {
+  background: #006c67;
   color: white;
-  font-size: 0.9rem;
-  border-top: 1px solid #00f0c2;
-  animation: fadeIn 1s ease;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* ============ التأثيرات الإضافية للمحتوى ============ */
-h2, h3, p, ul, ol, table {
-  animation: slideUp 1s ease forwards;
-}
-@keyframes slideUp {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
+.filters input[type="checkbox"] {
+  margin-right: 5px;
+  cursor: pointer;
 }
 
-/* ============ Responsive ============ */
-@media (max-width:768px){
-  .container { width: 95%; margin-top: 120px; padding:20px;}
-  .top-bar { flex-direction: column; height: auto; gap:10px; padding:10px;}
-  .top-bar .nav-links { display:flex; flex-wrap:wrap; justify-content:center;}
+.filters label:hover {
+  background: #004d4a;
+}
+
+/* =========================
+   صفحة دليل العمرة والحج
+========================= */
+.steps, .etiquette, .faq, .download-guide {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.steps ol, .etiquette ul {
+  padding-right: 20px;
+  color: #222;
+}
+
+.steps li, .etiquette li {
+  margin-bottom: 10px;
+}
+
+.faq details {
+  background: #e0f2f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: bold;
+}
+
+.download-guide .btn {
+  display: inline-block;
+  background: #006c67;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.download-guide .btn:hover {
+  background: #004d4a;
+}
+
+/* =========================
+   صفحة الأذكار والصلاة
+========================= */
+.adhkar ul {
+  padding-right: 20px;
+  color: #222;
+  list-style-type: square;
+}
+
+.quran {
+  margin-top: 20px;
+}
+
+.quran .btn {
+  display: inline-block;
+  background: #006c67;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.quran .btn:hover {
+  background: #004d4a;
+}
+
+.prayer-times {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.prayer-times table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prayer-times th, .prayer-times td {
+  border: 1px solid #bbb;
+  padding: 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.prayer-times th {
+  background: #006c67;
+  color: white;
+}
+
+.prayer-times tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* =========================
+   صفحة التواصل معنا
+========================= */
+.contact-form {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.contact-form .input-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form .btn {
+  background: #006c67;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form .btn:hover {
+  background: #004d4a;
+}
+
+.official-email {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.faq {
+  margin-top: 20px;
 }

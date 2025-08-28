@@ -15,26 +15,20 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <!-- Header ثابت -->
-  <header class="top-bar">
-    <div class="logo">
-      <img src="AL.1.jpg" alt="Logo">
-      <span>AL.1</span>
-    </div>
-    <div class="controls">
-      <select id="lang-select">
-        <option value="ar">🇸🇦 العربية</option>
-        <option value="en">🇬🇧 English</option>
-      </select>
-      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
-    </div>
-  </header>
-
-  <div class="container animate-fade">
-    <h2 class="animate-slide"><i class="fas fa-envelope"></i> تواصل معنا</h2>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-envelope"></i> تواصل معنا</h1>
+      <div class="controls">
+        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+        <select id="lang-switch">
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="en">🇬🇧 English</option>
+        </select>
+      </div>
+    </header>
 
     <!-- نموذج التواصل -->
-    <section class="contact-form animate-fade">
+    <section class="contact-form">
       <form id="contactForm">
         <div class="input-group">
           <label><i class="fas fa-user"></i> الاسم</label>
@@ -53,13 +47,13 @@
     </section>
 
     <!-- بريد رسمي -->
-    <section class="official-email animate-fade">
+    <section class="official-email">
       <p>📧 للتواصل الرسمي: <a href="mailto:info@haramain.com">info@haramain.com</a></p>
     </section>
 
     <!-- FAQ -->
-    <section class="faq animate-fade">
-      <h3>أسئلة شائعة</h3>
+    <section class="faq">
+      <h2>أسئلة شائعة</h2>
       <details>
         <summary>كيف يمكنني تقديم اقتراح؟</summary>
         <p>استخدم نموذج التواصل الموجود بالأعلى وأرسل اقتراحك.</p>
@@ -69,12 +63,11 @@
         <p>يمكن التواصل عبر البريد الإلكتروني الرسمي فقط.</p>
       </details>
     </section>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    صنع بكل حب بواسطة ريما ❤️
-  </footer>
+    <footer>
+      <p>© جميع الحقوق محفوظة - صنع بواسطة ريما</p>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>

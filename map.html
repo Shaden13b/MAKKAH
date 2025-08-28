@@ -6,6 +6,7 @@
   <title>الخريطة التفاعلية - الحرمين</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- مكتبة Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
@@ -16,36 +17,23 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <!-- Header -->
-  <header class="top-bar">
-    <div class="logo">
-      <img src="AL.1.jpg" alt="Logo">
-      <span>AL.1</span>
-    </div>
-    <div class="nav-links">
-      <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
-      <a href="map.html"><i class="fas fa-map"></i> الخريطة</a>
-      <a href="guide.html"><i class="fas fa-book-open"></i> دليل العمرة والحج</a>
-      <a href="prayers.html"><i class="fas fa-pray"></i> الأذكار والصلاة</a>
-      <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
-    </div>
-    <div class="controls">
-      <select id="lang-select">
-        <option value="ar">العربية</option>
-        <option value="en">English</option>
-      </select>
-      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
-    </div>
-  </header>
-
-  <div class="container animate-fade">
-    <h2 class="animate-slide"><i class="fas fa-map-marked-alt"></i> الخريطة التفاعلية للحرم</h2>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-map-marked-alt"></i> الخريطة التفاعلية للحرم</h1>
+      <div class="controls">
+        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+        <select id="lang-switch">
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="en">🇬🇧 English</option>
+        </select>
+      </div>
+    </header>
 
     <!-- خريطة -->
-    <div id="map" style="height:500px; border-radius:10px;"></div>
+    <div id="map" style="height:500px; border-radius:10px; margin-top:20px;"></div>
 
     <!-- فلاتر الأماكن -->
-    <div class="filters animate-fade">
+    <div class="filters">
       <label><input type="checkbox" class="filter" data-type="bathroom" checked> دورات المياه</label>
       <label><input type="checkbox" class="filter" data-type="elevator" checked> مصاعد</label>
       <label><input type="checkbox" class="filter" data-type="prayer_men" checked> مصليات رجال</label>
@@ -53,12 +41,11 @@
       <label><input type="checkbox" class="filter" data-type="wudu" checked> أماكن الوضوء</label>
       <label><input type="checkbox" class="filter" data-type="zamzam" checked> ماء زمزم</label>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    صنع بكل حب بواسطة ريما ❤️
-  </footer>
+    <footer>
+      <p>© جميع الحقوق محفوظة - صنع بواسطة ريما</p>
+    </footer>
+  </div>
 
   <!-- مكتبة Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
