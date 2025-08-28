@@ -6,6 +6,9 @@
   <title>الأذكار والقرآن وأوقات الصلاة - الحرمين</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -15,11 +18,34 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
+  <!-- Header ثابت -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="AL.1.jpg" alt="Logo">
+      <span>AL.1</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+      <a href="map.html"><i class="fas fa-map"></i> الخريطة</a>
+      <a href="guide.html"><i class="fas fa-book-open"></i> دليل العمرة والحج</a>
+      <a href="prayers.html"><i class="fas fa-pray"></i> الأذكار والصلاة</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i> تواصل معنا</a>
+    </div>
+    <div class="controls">
+      <select id="lang-select">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+      </select>
+      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <!-- محتوى الصفحة -->
   <div class="container">
-    <h2><i class="fas fa-pray"></i> الأذكار، القرآن، وأوقات الصلاة</h2>
+    <h2 class="animate-slide"><i class="fas fa-pray"></i> الأذكار، القرآن، وأوقات الصلاة</h2>
 
     <!-- الأذكار اليومية -->
-    <section class="adhkar">
+    <section class="adhkar animate-fade">
       <h3>أذكار يومية</h3>
       <ul>
         <li>سبحان الله – 33 مرة</li>
@@ -30,13 +56,13 @@
     </section>
 
     <!-- رابط القرآن المباشر -->
-    <section class="quran">
+    <section class="quran animate-fade">
       <h3>القرآن الكريم</h3>
       <a href="https://quran.com" target="_blank" class="btn"><i class="fas fa-book"></i> قراءة القرآن مباشرة</a>
     </section>
 
     <!-- أوقات الصلاة -->
-    <section class="prayer-times">
+    <section class="prayer-times animate-fade">
       <h3>أوقات الصلاة وأسماء الأئمة</h3>
       <table>
         <tr><th>الصلاة</th><th>الوقت</th><th>الإمام</th></tr>
@@ -48,6 +74,11 @@
       </table>
     </section>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    صنع بكل حب بواسطة ريما ❤️
+  </footer>
 
   <script src="script.js"></script>
 </body>

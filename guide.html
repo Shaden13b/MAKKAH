@@ -15,11 +15,26 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <div class="container">
-    <h2><i class="fas fa-book-open"></i> دليل العمرة والحج</h2>
+  <!-- Header ثابت -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="AL.1.jpg" alt="Logo">
+      <span>AL.1</span>
+    </div>
+    <div class="controls">
+      <select id="lang-select">
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <div class="container animate-fade">
+    <h2 class="animate-slide"><i class="fas fa-book-open"></i> دليل العمرة والحج</h2>
 
     <!-- خطوات العمرة والحج -->
-    <section class="steps">
+    <section class="steps animate-fade">
       <h3>خطوات العمرة</h3>
       <ol>
         <li>الإحرام من الميقات المحدد</li>
@@ -40,7 +55,7 @@
     </section>
 
     <!-- آداب زيارة الحرم -->
-    <section class="etiquette">
+    <section class="etiquette animate-fade">
       <h3>آداب زيارة الحرم</h3>
       <ul>
         <li>اللباس المحتشم</li>
@@ -51,7 +66,7 @@
     </section>
 
     <!-- أسئلة وأجوبة -->
-    <section class="faq">
+    <section class="faq animate-fade">
       <h3>أسئلة شائعة</h3>
       <details>
         <summary>هل يمكن أداء العمرة أكثر من مرة في اليوم؟</summary>
@@ -68,10 +83,16 @@
     </section>
 
     <!-- تحميل PDF -->
-    <section class="download-guide">
+    <section class="download-guide animate-fade">
       <a href="#" class="btn"><i class="fas fa-download"></i> تحميل دليل PDF</a>
     </section>
   </div>
 
+  <!-- Footer -->
+  <footer>
+    صنع بكل حب بواسطة ريما ❤️
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

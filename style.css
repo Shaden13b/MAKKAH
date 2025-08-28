@@ -1,4 +1,4 @@
-/* خلفية الفيديو */
+/* ============ خلفية الفيديو ============ */
 #bg-video {
   position: fixed;
   top: 0;
@@ -7,122 +7,145 @@
   min-height: 100%;
   z-index: -1;
   object-fit: cover;
-  filter: brightness(60%); /* يخلي الخلفية أغمق عشان المحتوى يبان */
+  filter: brightness(60%);
+  animation: fadeInVideo 2s ease forwards;
+}
+@keyframes fadeInVideo {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-/* صندوق تسجيل الدخول */
-.login-box {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 30px;
+/* ============ Header ============ */
+header.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: slideDown 1s ease forwards;
+}
+@keyframes slideDown { from {top: -80px;} to {top:0;} }
+
+.top-bar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.top-bar .logo img {
+  height: 40px;
+  border-radius: 50%;
+  animation: logoBounce 1s ease infinite alternate;
+}
+@keyframes logoBounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-5px);}
+}
+.top-bar .nav-links a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.top-bar .nav-links a:hover {
+  color: #00f0c2;
+  transform: scale(1.1);
+}
+.top-bar .lang-switch select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============ صندوق المحتوى ============ */
+.container {
+  background: rgba(255,255,255,0.85);
   border-radius: 15px;
-  width: 350px;
-  max-width: 90%;
-  margin: 10% auto;
+  margin: 100px auto 50px auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 900px;
   text-align: center;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0px 4px 25px rgba(0,0,0,0.3);
   animation: fadeIn 1.2s ease-in-out;
 }
-
-.login-box h2 {
-  margin-bottom: 20px;
-  color: #333;
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
+/* ============ الأزرار ============ */
+.btn {
+  display: inline-block;
+  background: #006c67;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #00f0c2;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(0,240,194,0.7);
+}
+
+/* ============ مربعات الإدخال ============ */
 .input-group {
-  text-align: right;
   margin-bottom: 15px;
+  text-align: right;
 }
-
 .input-group label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
   color: #222;
 }
-
 .input-group input,
-.input-group select {
+.input-group select,
+.input-group textarea {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #bbb;
-  border-radius: 8px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus {
+  border-color: #00f0c2;
+  box-shadow: 0 0 8px rgba(0,240,194,0.6);
+  outline: none;
 }
 
-.btn {
-  display: block;
-  background: #006c67;
+/* ============ الوضع الليلي ============ */
+body.dark-mode .container {
+  background: rgba(0,0,0,0.85);
   color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  margin: 10px 0;
-  text-decoration: none;
-  cursor: pointer;
-  transition: 0.3s;
+}
+body.dark-mode .btn {
+  background: #222;
+}
+body.dark-mode .btn:hover {
+  background: #00f0c2;
 }
 
-.btn:hover {
-  background: #004d4a;
-}
-
-.guest {
-  background: #555;
-}
-
-.guest:hover {
-  background: #333;
-}
-
-/* حركة الدخول */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-/* تنسيق المحتوى العام */
-.container {
-  background: rgba(255,255,255,0.85);
-  border-radius: 15px;
-  margin: 5% auto;
-  padding: 30px;
-  width: 80%;
-  max-width: 800px;
-  text-align: center;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-header h1 {
-  font-size: 1.5rem;
-  color: #333;
-}
-
-.controls {
-  display: flex;
-  gap: 10px;
-}
-
-#toggle-mode {
-  background: #333;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#toggle-mode:hover {
-  background: #555;
-}
-
-/* شريط الأخبار */
+/* ============ شريط الأخبار ============ */
 .news-ticker {
   background: #006c67;
   color: white;
@@ -131,242 +154,39 @@ header h1 {
   border-radius: 8px;
   overflow: hidden;
 }
-
 .news-ticker p {
   margin: 0;
-  animation: slideText 10s linear infinite;
+  animation: slideText 12s linear infinite;
 }
-
 @keyframes slideText {
   from { transform: translateX(100%); }
   to { transform: translateX(-100%); }
 }
 
-/* قائمة الأزرار */
-.menu {
-  display: grid;
-  gap: 15px;
-}
-
-.menu .btn {
-  display: block;
-  padding: 15px;
-  background: #006c67;
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-size: 1.2rem;
-  transition: 0.3s;
-}
-
-.menu .btn:hover {
-  background: #004d4a;
-  transform: scale(1.05);
-}
-/* الوضع الليلي */
-body.dark-mode .container {
-  background: rgba(0,0,0,0.8);
-  color: white;
-}
-
-body.dark-mode .menu .btn {
-  background: #222;
-}
-
-body.dark-mode .menu .btn:hover {
-  background: #444;
-}
-/* ====================
-   تنسيقات صفحة الخريطة
-   ==================== */
-#map {
-  margin-top: 20px;
-  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-}
-
-.filters {
-  margin-top: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.filters label {
-  background: #006c67;
-  color: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.filters input[type="checkbox"] {
-  margin-right: 5px;
-  cursor: pointer;
-}
-
-.filters label:hover {
-  background: #004d4a;
-}
-/* ====================
-   تنسيقات صفحة دليل العمرة والحج
-   ==================== */
-.steps, .etiquette, .faq, .download-guide {
-  margin-top: 25px;
-  text-align: right;
-}
-
-.steps ol, .etiquette ul {
-  padding-right: 20px;
-  color: #222;
-}
-
-.steps li, .etiquette li {
-  margin-bottom: 10px;
-}
-
-.faq details {
-  background: #e0f2f1;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.faq summary {
-  font-weight: bold;
-}
-
-.download-guide .btn {
-  display: inline-block;
-  background: #006c67;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.download-guide .btn:hover {
-  background: #004d4a;
-}
-/* ====================
-   تنسيقات صفحة الأذكار والصلاة
-   ==================== */
-.adhkar ul {
-  padding-right: 20px;
-  color: #222;
-  list-style-type: square;
-}
-
-.quran {
-  margin-top: 20px;
-}
-
-.quran .btn {
-  display: inline-block;
-  background: #006c67;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.quran .btn:hover {
-  background: #004d4a;
-}
-
-.prayer-times {
-  margin-top: 20px;
-  overflow-x: auto;
-}
-
-.prayer-times table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.prayer-times th, .prayer-times td {
-  border: 1px solid #bbb;
-  padding: 8px;
+/* ============ Footer ============ */
+footer {
   text-align: center;
-  border-radius: 5px;
-}
-
-.prayer-times th {
-  background: #006c67;
+  padding: 15px;
+  margin-top: 30px;
+  background: rgba(0,0,0,0.6);
   color: white;
+  font-size: 0.9rem;
+  border-top: 1px solid #00f0c2;
+  animation: fadeIn 1s ease;
 }
 
-.prayer-times tr:nth-child(even) {
-  background: #f2f2f2;
+/* ============ التأثيرات الإضافية للمحتوى ============ */
+h2, h3, p, ul, ol, table {
+  animation: slideUp 1s ease forwards;
 }
-/* ====================
-   تنسيقات صفحة التواصل معنا
-   ==================== */
-.contact-form {
-  margin-top: 20px;
-  text-align: right;
+@keyframes slideUp {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
-.contact-form .input-group {
-  margin-bottom: 15px;
-}
-
-.contact-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #222;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #bbb;
-  border-radius: 8px;
-}
-
-.contact-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contact-form .btn {
-  background: #006c67;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.contact-form .btn:hover {
-  background: #004d4a;
-}
-
-.official-email {
-  margin-top: 20px;
-  font-weight: bold;
-  color: #222;
-}
-
-.faq {
-  margin-top: 20px;
-}
-
-.faq details {
-  background: #e0f2f1;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.faq summary {
-  font-weight: bold;
+/* ============ Responsive ============ */
+@media (max-width:768px){
+  .container { width: 95%; margin-top: 120px; padding:20px;}
+  .top-bar { flex-direction: column; height: auto; gap:10px; padding:10px;}
+  .top-bar .nav-links { display:flex; flex-wrap:wrap; justify-content:center;}
 }

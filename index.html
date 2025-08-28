@@ -15,32 +15,42 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <!-- المحتوى -->
-  <div class="container">
-    <header>
-      <h1><i class="fas fa-kaaba"></i> مرحبًا بكم في موقع الحرمين</h1>
-      <div class="controls">
-        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
-        <select id="lang-switch">
-          <option value="ar">🇸🇦 العربية</option>
-          <option value="en">🇬🇧 English</option>
-        </select>
-      </div>
-    </header>
+  <!-- Header ثابت -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="AL.1.jpg" alt="Logo">
+      <span>AL.1</span>
+    </div>
+    <div class="controls">
+      <select id="lang-select">
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <div class="container animate-fade">
+    <h1 class="animate-slide"><i class="fas fa-kaaba"></i> مرحبًا بكم في موقع الحرمين</h1>
 
     <!-- شريط الأخبار -->
-    <div class="news-ticker">
+    <div class="news-ticker animate-fade">
       <p>📢 تم افتتاح مصلى جديد للنساء في الدور الثاني</p>
     </div>
 
     <!-- قائمة الصفحات -->
-    <nav class="menu">
+    <nav class="menu animate-fade">
       <a href="map.html" class="btn"><i class="fas fa-map-marked-alt"></i> الخريطة التفاعلية</a>
       <a href="guide.html" class="btn"><i class="fas fa-book-open"></i> دليل العمرة والحج</a>
       <a href="prayers.html" class="btn"><i class="fas fa-pray"></i> الأذكار والقرآن وأوقات الصلاة</a>
       <a href="contact.html" class="btn"><i class="fas fa-envelope"></i> تواصل معنا</a>
     </nav>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    صنع بكل حب بواسطة ريما ❤️
+  </footer>
 
   <script src="script.js"></script>
 </body>

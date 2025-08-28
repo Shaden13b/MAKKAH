@@ -15,11 +15,26 @@
     متصفحك لا يدعم عرض الفيديو
   </video>
 
-  <div class="container">
-    <h2><i class="fas fa-envelope"></i> تواصل معنا</h2>
+  <!-- Header ثابت -->
+  <header class="top-bar">
+    <div class="logo">
+      <img src="AL.1.jpg" alt="Logo">
+      <span>AL.1</span>
+    </div>
+    <div class="controls">
+      <select id="lang-select">
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="en">🇬🇧 English</option>
+      </select>
+      <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+
+  <div class="container animate-fade">
+    <h2 class="animate-slide"><i class="fas fa-envelope"></i> تواصل معنا</h2>
 
     <!-- نموذج التواصل -->
-    <section class="contact-form">
+    <section class="contact-form animate-fade">
       <form id="contactForm">
         <div class="input-group">
           <label><i class="fas fa-user"></i> الاسم</label>
@@ -38,12 +53,12 @@
     </section>
 
     <!-- بريد رسمي -->
-    <section class="official-email">
+    <section class="official-email animate-fade">
       <p>📧 للتواصل الرسمي: <a href="mailto:info@haramain.com">info@haramain.com</a></p>
     </section>
 
     <!-- FAQ -->
-    <section class="faq">
+    <section class="faq animate-fade">
       <h3>أسئلة شائعة</h3>
       <details>
         <summary>كيف يمكنني تقديم اقتراح؟</summary>
@@ -55,6 +70,11 @@
       </details>
     </section>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    صنع بكل حب بواسطة ريما ❤️
+  </footer>
 
   <script src="script.js"></script>
 </body>
