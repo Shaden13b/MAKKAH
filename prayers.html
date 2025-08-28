@@ -16,60 +16,37 @@
   </video>
 
   <div class="container">
-    <!-- ترويسة الصفحة -->
-    <header>
-      <h1><i class="fas fa-pray"></i> الأذكار، القرآن، وأوقات الصلاة</h1>
-      <div class="controls">
-        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
-        <select id="lang-switch">
-          <option value="ar">🇸🇦 العربية</option>
-          <option value="en">🇬🇧 English</option>
-        </select>
-      </div>
-    </header>
+    <h2><i class="fas fa-pray"></i> الأذكار، القرآن، وأوقات الصلاة</h2>
 
-    <!-- أذكار يومية -->
+    <!-- الأذكار اليومية -->
     <section class="adhkar">
-      <h2><i class="fas fa-star"></i> أذكار يومية</h2>
+      <h3>أذكار يومية</h3>
       <ul>
-        <li>سبحان الله – 33 مرة</li>
-        <li>الحمد لله – 33 مرة</li>
-        <li>الله أكبر – 34 مرة</li>
-        <li>لا إله إلا الله وحده لا شريك له</li>
+        <li class="visible">سبحان الله – 33 مرة</li>
+        <li class="visible">الحمد لله – 33 مرة</li>
+        <li class="visible">الله أكبر – 34 مرة</li>
+        <li class="visible">لا إله إلا الله وحده لا شريك له</li>
       </ul>
     </section>
 
     <!-- رابط القرآن المباشر -->
     <section class="quran">
-      <h2><i class="fas fa-book"></i> القرآن الكريم</h2>
-      <a href="https://quran.com" target="_blank" class="btn"><i class="fas fa-book-open"></i> قراءة القرآن مباشرة</a>
+      <h3>القرآن الكريم</h3>
+      <a href="https://quran.com" target="_blank" class="btn"><i class="fas fa-book"></i> قراءة القرآن مباشرة</a>
     </section>
 
     <!-- أوقات الصلاة -->
     <section class="prayer-times">
-      <h2><i class="fas fa-clock"></i> أوقات الصلاة وأسماء الأئمة</h2>
+      <h3>أوقات الصلاة وأسماء الأئمة</h3>
       <table>
-        <thead>
-          <tr>
-            <th>الصلاة</th>
-            <th>الوقت</th>
-            <th>الإمام</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>الفجر</td><td>05:10</td><td>ياسر الدوسري</td></tr>
-          <tr><td>الظهر</td><td>12:30</td><td>ماهر المعيقلي</td></tr>
-          <tr><td>العصر</td><td>15:45</td><td>مشاري العفاسي</td></tr>
-          <tr><td>المغرب</td><td>18:10</td><td>سعود الشريم</td></tr>
-          <tr><td>العشاء</td><td>19:30</td><td>عبد الباسط عبد الصمد</td></tr>
-        </tbody>
+        <tr class="visible"><th>الصلاة</th><th>الوقت</th><th>الإمام</th></tr>
+        <tr class="visible"><td>الفجر</td><td>05:10</td><td>ياسر الدوسري</td></tr>
+        <tr class="visible"><td>الظهر</td><td>12:30</td><td>ماهر المعيقلي</td></tr>
+        <tr class="visible"><td>العصر</td><td>15:45</td><td>مشاري العفاسي</td></tr>
+        <tr class="visible"><td>المغرب</td><td>18:10</td><td>سعود الشريم</td></tr>
+        <tr class="visible"><td>العشاء</td><td>19:30</td><td>عبد الباسط عبد الصمد</td></tr>
       </table>
     </section>
-
-    <!-- حقوق الصفحة -->
-    <footer>
-      <p>© جميع الحقوق محفوظة - صنع بواسطة ريما</p>
-    </footer>
   </div>
 
   <script src="script.js"></script>
