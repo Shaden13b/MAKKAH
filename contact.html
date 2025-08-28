@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا - الحرمين</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- خلفية الفيديو -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/BG1.mp4" type="video/mp4">
+    متصفحك لا يدعم عرض الفيديو
+  </video>
+
+  <div class="container">
+    <h2><i class="fas fa-envelope"></i> تواصل معنا</h2>
+
+    <!-- نموذج التواصل -->
+    <section class="contact-form">
+      <form id="contactForm">
+        <div class="input-group">
+          <label><i class="fas fa-user"></i> الاسم</label>
+          <input type="text" name="name" placeholder="أدخل اسمك" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+          <input type="email" name="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="input-group">
+          <label><i class="fas fa-comment"></i> الرسالة</label>
+          <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
+        </div>
+        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> إرسال</button>
+      </form>
+    </section>
+
+    <!-- بريد رسمي -->
+    <section class="official-email">
+      <p>📧 للتواصل الرسمي: <a href="mailto:info@haramain.com">info@haramain.com</a></p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h3>أسئلة شائعة</h3>
+      <details>
+        <summary>كيف يمكنني تقديم اقتراح؟</summary>
+        <p>استخدم نموذج التواصل الموجود بالأعلى وأرسل اقتراحك.</p>
+      </details>
+      <details>
+        <summary>هل يمكنني الاتصال مباشرة؟</summary>
+        <p>يمكن التواصل عبر البريد الإلكتروني الرسمي فقط.</p>
+      </details>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

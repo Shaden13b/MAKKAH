@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الصفحة الرئيسية - موقع الحرمين</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- خلفية الفيديو -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/BG1.mp4" type="video/mp4">
+    متصفحك لا يدعم عرض الفيديو
+  </video>
+
+  <!-- المحتوى -->
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-kaaba"></i> مرحبًا بكم في موقع الحرمين</h1>
+      <div class="controls">
+        <button id="toggle-mode"><i class="fas fa-moon"></i></button>
+        <select id="lang-switch">
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="en">🇬🇧 English</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- شريط الأخبار -->
+    <div class="news-ticker">
+      <p>📢 تم افتتاح مصلى جديد للنساء في الدور الثاني</p>
+    </div>
+
+    <!-- قائمة الصفحات -->
+    <nav class="menu">
+      <a href="map.html" class="btn"><i class="fas fa-map-marked-alt"></i> الخريطة التفاعلية</a>
+      <a href="guide.html" class="btn"><i class="fas fa-book-open"></i> دليل العمرة والحج</a>
+      <a href="prayers.html" class="btn"><i class="fas fa-pray"></i> الأذكار والقرآن وأوقات الصلاة</a>
+      <a href="contact.html" class="btn"><i class="fas fa-envelope"></i> تواصل معنا</a>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

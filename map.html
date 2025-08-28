@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الخريطة التفاعلية - الحرمين</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- مكتبة Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+  <!-- خلفية الفيديو -->
+  <video autoplay muted loop id="bg-video">
+    <source src="videos/BG1.mp4" type="video/mp4">
+    متصفحك لا يدعم عرض الفيديو
+  </video>
+
+  <div class="container">
+    <h2><i class="fas fa-map-marked-alt"></i> الخريطة التفاعلية للحرم</h2>
+
+    <!-- خريطة -->
+    <div id="map" style="height:500px; border-radius:10px;"></div>
+
+    <!-- فلاتر الأماكن -->
+    <div class="filters">
+      <label><input type="checkbox" class="filter" data-type="bathroom" checked> دورات المياه</label>
+      <label><input type="checkbox" class="filter" data-type="elevator" checked> مصاعد</label>
+      <label><input type="checkbox" class="filter" data-type="prayer_men" checked> مصليات رجال</label>
+      <label><input type="checkbox" class="filter" data-type="prayer_women" checked> مصليات نساء</label>
+      <label><input type="checkbox" class="filter" data-type="wudu" checked> أماكن الوضوء</label>
+      <label><input type="checkbox" class="filter" data-type="zamzam" checked> ماء زمزم</label>
+    </div>
+  </div>
+
+  <!-- مكتبة Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

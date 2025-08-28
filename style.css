@@ -1,0 +1,372 @@
+/* خلفية الفيديو */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  filter: brightness(60%); /* يخلي الخلفية أغمق عشان المحتوى يبان */
+}
+
+/* صندوق تسجيل الدخول */
+.login-box {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  width: 350px;
+  max-width: 90%;
+  margin: 10% auto;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-group {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+}
+
+.btn {
+  display: block;
+  background: #006c67;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #004d4a;
+}
+
+.guest {
+  background: #555;
+}
+
+.guest:hover {
+  background: #333;
+}
+
+/* حركة الدخول */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* تنسيق المحتوى العام */
+.container {
+  background: rgba(255,255,255,0.85);
+  border-radius: 15px;
+  margin: 5% auto;
+  padding: 30px;
+  width: 80%;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+#toggle-mode {
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#toggle-mode:hover {
+  background: #555;
+}
+
+/* شريط الأخبار */
+.news-ticker {
+  background: #006c67;
+  color: white;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-ticker p {
+  margin: 0;
+  animation: slideText 10s linear infinite;
+}
+
+@keyframes slideText {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+
+/* قائمة الأزرار */
+.menu {
+  display: grid;
+  gap: 15px;
+}
+
+.menu .btn {
+  display: block;
+  padding: 15px;
+  background: #006c67;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.menu .btn:hover {
+  background: #004d4a;
+  transform: scale(1.05);
+}
+/* الوضع الليلي */
+body.dark-mode .container {
+  background: rgba(0,0,0,0.8);
+  color: white;
+}
+
+body.dark-mode .menu .btn {
+  background: #222;
+}
+
+body.dark-mode .menu .btn:hover {
+  background: #444;
+}
+/* ====================
+   تنسيقات صفحة الخريطة
+   ==================== */
+#map {
+  margin-top: 20px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+
+.filters {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filters label {
+  background: #006c67;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters input[type="checkbox"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.filters label:hover {
+  background: #004d4a;
+}
+/* ====================
+   تنسيقات صفحة دليل العمرة والحج
+   ==================== */
+.steps, .etiquette, .faq, .download-guide {
+  margin-top: 25px;
+  text-align: right;
+}
+
+.steps ol, .etiquette ul {
+  padding-right: 20px;
+  color: #222;
+}
+
+.steps li, .etiquette li {
+  margin-bottom: 10px;
+}
+
+.faq details {
+  background: #e0f2f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: bold;
+}
+
+.download-guide .btn {
+  display: inline-block;
+  background: #006c67;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.download-guide .btn:hover {
+  background: #004d4a;
+}
+/* ====================
+   تنسيقات صفحة الأذكار والصلاة
+   ==================== */
+.adhkar ul {
+  padding-right: 20px;
+  color: #222;
+  list-style-type: square;
+}
+
+.quran {
+  margin-top: 20px;
+}
+
+.quran .btn {
+  display: inline-block;
+  background: #006c67;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.quran .btn:hover {
+  background: #004d4a;
+}
+
+.prayer-times {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.prayer-times table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.prayer-times th, .prayer-times td {
+  border: 1px solid #bbb;
+  padding: 8px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.prayer-times th {
+  background: #006c67;
+  color: white;
+}
+
+.prayer-times tr:nth-child(even) {
+  background: #f2f2f2;
+}
+/* ====================
+   تنسيقات صفحة التواصل معنا
+   ==================== */
+.contact-form {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.contact-form .input-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form .btn {
+  background: #006c67;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form .btn:hover {
+  background: #004d4a;
+}
+
+.official-email {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+.faq {
+  margin-top: 20px;
+}
+
+.faq details {
+  background: #e0f2f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.faq summary {
+  font-weight: bold;
+}
